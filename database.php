@@ -108,7 +108,7 @@ function insert_user($regist_details)
 
         if ($result) {
             $created = true;
-            mkdir($id);
+            mkdir("/id/$id");
         } else {
             $created = false;
         }
