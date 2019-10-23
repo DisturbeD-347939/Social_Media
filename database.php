@@ -106,10 +106,28 @@ function insert_user($regist_details)
                 '$id'
             )");
 
-        if ($result) {
+        if ($result) 
+        {
             $created = true;
-            mkdir("/id/$id");
-        } else {
+
+            //Create directory for user
+            mkdir("id/$id", $id);
+
+            //Insert templates
+            $defaultProfilePic = "template/profilePicture.png";
+            $path = "id/" . $id . "/profilePicture.png";
+            $copied = copy($defaultProfilePic, $path);
+            if($copied)
+            {
+                echo "Successful \n";
+            }
+            else 
+            {
+                echo "Failed \n";
+            }
+        }
+        else
+        {
             $created = false;
         }
     }
