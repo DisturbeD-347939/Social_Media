@@ -23,6 +23,11 @@ if (!$user) {
 <body>
     <h1>This is your profile <?php echo $user["username"] ?></h1>
     <p>Enjoy your homepage!
+    <form action="uploadPicture.php" method="POST" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="profilePicture">
+    </form>
 </body>
 
 </html>
