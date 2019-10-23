@@ -29,5 +29,5 @@
     </div>
     <p>
     <input type="submit" value="Create account">
-    <button onclick="window.location.href='/login_form/login_form.html'">Go back</button>
+    <button onclick="window.location.href='login_form.html'">Go back</button>
 </form>
