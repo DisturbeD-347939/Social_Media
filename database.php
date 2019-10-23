@@ -25,7 +25,8 @@ function show_all_users()
 {
     $result = db()->query("SELECT * FROM users");
 
-    foreach ($result as $k => $v) {
+    foreach ($result as $k => $v) 
+    {
         var_dump($v);
     }
 }
@@ -35,7 +36,8 @@ function login_check($email, $password)
 {
     $result = db()->query("SELECT * FROM users WHERE email='$email' AND PASSWORD='$password'");
 
-    if ($result->rowCount()) {
+    if ($result->rowCount()) 
+    {
         return $result->fetch();
     }
 }
@@ -45,7 +47,8 @@ function login_check($email, $password)
 function compare($details)
 {
     $found = [];
-    foreach ($details as $k => $v) {
+    foreach ($details as $k => $v) 
+    {
         $result = db()->query("SELECT * FROM users WHERE $k='$v'");
         if ($result->rowCount()) {
             array_push($found, $k);
@@ -83,12 +86,15 @@ function insert_user($regist_details)
 
     $available = true;
     $created = false;
-    foreach ($repeated as $k) {
-        if ($k == "email" || $k == "username") {
+    foreach ($repeated as $k) 
+    {
+        if ($k == "email" || $k == "username") 
+        {
             $available = false;
         }
     }
-    if ($available) {
+    if ($available) 
+    {
         $result = db()->query("INSERT INTO users (first_name, surname, email, username, password, id) 
             VALUES 
             (
