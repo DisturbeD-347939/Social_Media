@@ -1,4 +1,4 @@
 dir_to_ignore/
-.png
-.jpg
-.gif
+*.png
+*.jpg
+*.gif
