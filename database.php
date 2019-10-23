@@ -51,6 +51,7 @@ function compare($details)
             array_push($found, $k);
         }
     }
+    
     return $found;
 }
 
@@ -58,34 +59,27 @@ function compare($details)
 function insert_user($regist_details)
 {
     //Create ID number
-    $result = db()->query("SELECT id FROM  users");
+    $result = db()->query("SELECT id FROM users");
     $counter = 0;
-    $checked = 0;
+    $array = [];
 
-    $result = sort($result);
-
-        foreach ($result as $k => $v) 
+    foreach($result as $k)
+    {
+        array_push($array, $k["id"]);
+    }
+    sort($array);
+    foreach($array as $k)
+    {
+        if($counter == $k)
         {
-            echo "$counter = ";
-            echo $v['id'];
-            echo "\n";
-            if ($counter == $v['id']) 
-            {
-                $checked = 0;
-                break;
-            } 
-            else 
-            {
-                $checked = 1;
-            }
-            array_push($checkbacks, $checked);
+            $counter++;
         }
+    }
 
     //Check if it exists in the database
     $repeated = compare($regist_details);
 
     $id = $counter;
-    var_dump($id);
 
     $available = true;
     $created = false;
