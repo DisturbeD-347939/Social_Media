@@ -73,7 +73,7 @@ if(!$logged_in)
 }
 else if($logged_in)
 {
-    include 'logged_in.php';
+    include 'profile.php';
 }
 else if(!$created)
 {
