@@ -33,6 +33,11 @@ if (!$user) {
         <input type="file" name="fileToUpload" id="fileToUpload" required>
         <input type="submit" value="Upload Image" name="profilePicture">
     </form>
+    <p>
+    <?php if($user["username"] == "admin") : ?>
+        <a href="delete_user.php">Delete user</a>
+        <p>
+    <?php endif ?>
     <a href="log_out.php">Log out</a>
 </body>
 

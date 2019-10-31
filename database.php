@@ -83,7 +83,6 @@ function insert_user($regist_details)
     $repeated = compare($regist_details);
 
     $id = $counter;
-
     $available = true;
     $created = false;
     foreach ($repeated as $k) 
@@ -136,4 +135,17 @@ function insert_user($regist_details)
     array_push($return, $created);
     array_push($return, $repeated);
     return $return;
+}
+
+function remove_user($id, $path)
+{
+    $result = db()->query("DELETE FROM users WHERE id=$id");
+    foreach(scandir($path) as $file)
+    {
+        if($file != ".." && $file != ".")
+        {
+            unlink($path . "/" . $file);
+        }
+    }
+    rmdir($path);
 }
