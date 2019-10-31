@@ -10,15 +10,55 @@ body
     height: 200px;
 }
 
+#login_form_body
+{
+    background-color: lightskyblue;
+}
+
 #login_form
 {
-        height:  200px;
+        height:  300px;
         width: 400px;
-        background: black;
+        background: white;
+        border: 2px solid black;
 
         position: fixed;
         top: 50%;
         left: 50%;
-        margin-top: -100px;
-        margin-left: -200px;
+        margin-top: -150px;
+        margin-left: -300px;
+        padding: 50px 100px;
+}
+
+#login_form h1
+{
+    color: red;
+}
+
+#login_form form div:first-child input[type=text]
+{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("/icons/email.png");
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+#login_form form div:nth-child(2) input[type=password]
+{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("/icons/password.png");
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
 }
