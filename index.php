@@ -51,7 +51,7 @@ if(!empty($_POST))
     //LOG IN FORM
     else if(isset($_POST['log_in']))
     {
-        $user = login_check($_POST['log_in']['email'], $_POST['log_in']['password']);
+        $user = login_check($_POST['log_in']['email'], hash('sha256', $_POST['log_in']['password']));
         if($user)
         {
             $_SESSION['logged_in'] = true;

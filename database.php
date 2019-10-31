@@ -95,6 +95,7 @@ function insert_user($regist_details)
     }
     if ($available) 
     {
+        $regist_details["password"] = hash('sha256', $regist_details["password"]);
         $result = db()->query("INSERT INTO users (first_name, surname, email, username, password, id) 
             VALUES 
             (
