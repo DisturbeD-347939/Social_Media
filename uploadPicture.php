@@ -43,7 +43,7 @@ if(isset($_POST["profilePicture"]))
 if (file_exists($target_file)) 
 {
     $txt = "Replace current profile picture?";
-    echo "<script> confirmationBox(",$txt,"); </script>";
+    //echo "<script> confirmationBox(",$txt,"); </script>";
 }
 
 // Check file size
@@ -69,7 +69,7 @@ if ($uploadOk != 0)
     }
     else
     {
-        include 'profile.php';
+        header('Location: /Social_Media/');
     }
 }
 

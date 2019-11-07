@@ -30,7 +30,7 @@ if (!$user) {
 
 <body>
     <img id="profilePic" src="id/<?php echo $user["id"]?>/profilePicture.png">
-    <h1>This is your profile <?php echo $user["username"] ?></h1>
+    <h1>This is your profile <?php echo $user["username"]; echo " - "; echo $user["id"] ?></h1>
     <p>Enjoy your homepage!
     <form action="uploadPicture.php" method="POST" enctype="multipart/form-data">
         Select image to upload:
@@ -44,5 +44,7 @@ if (!$user) {
     <?php endif ?>
     <a href="log_out.php">Log out</a>
 </body>
+
+
 
 </html>
